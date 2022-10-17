@@ -1,0 +1,14 @@
+Coming to the process,the Data Engineering team collected the files from different sources through webscrapping tool.
+They will process the files and upload into S3 bucket.
+To dump the files from S3 bucket into Stages in a queue,a SQS queue was created and was linked with S3 bucket through ARN.
+SQS was linked with AWS lambda to trigger the same whenever the files are into S3 bucket.
+S3 was added as trigger in AWS lambda.
+Before all the procedure mentioned above,we login to the Snowflake userinterface to create Database,Schemas,Destination tables.We have
+also created stages for each table.We have established a connection with S3 bucket through credentials which were provided by Devops
+team.
+As a Python developer,we have performed operations like cleaning the staging area,loading the data into staging
+area,new_customer verification and creation of schemas and tables,configuration of Snowflake Database through snowflake connector.
+It is used to connect stages with target tables.We used the copy into command to reflect the files in Target tables.
+Creation of slackintegration module to capture and send it to the slack channel with load results.
+PowerBI team interact with our team to generate a report and get the data for visualization.
+Roles & Responsibilities:
